@@ -1,0 +1,161 @@
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
+
+
+body {
+  --bg-color: hsl(0, 0%, 98%);
+  --card-color: white;
+  --text-color: hsl(235, 19%, 35%);
+  --text-light: hsl(236, 9%, 61%);
+  --border-color: hsl(233, 11%, 84%);
+
+  background-color: var(--bg-color);
+  min-height: 100vh;
+}
+
+
+body.dark {
+  --bg-color: hsl(235, 21%, 11%);
+  --card-color: hsl(235, 24%, 19%);
+  --text-color: hsl(234, 39%, 85%);
+  --text-light: hsl(234, 11%, 52%);
+  --border-color: hsl(237, 14%, 26%);
+}
+
+.background {
+  width: 100%;
+  height: 200px;
+  background-image: url(images/bg-mobile-light.jpg);
+  background-size: cover;
+  position: absolute;
+  top: 0;
+  z-index: -1;
+}
+body.dark .background {
+  background-image: url(images/bg-mobile-dark.jpg);
+}
+
+@media (min-width: 700px) {
+  .background {
+    background-image: url(images/bg-desktop-light.jpg);
+    height: 300px;
+  }
+  body.dark .background {
+    background-image: url(images/bg-desktop-dark.jpg);
+  }
+}
+
+
+.container {
+  max-width: 550px;
+  margin: 0 auto;
+  padding: 40px 20px;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+}
+header h1 {
+  color: white;
+  letter-spacing: 8px;
+}
+header img {
+  width: 22px;
+  cursor: pointer;
+}
+
+#form {
+  margin-bottom: 20px;
+}
+#input {
+  width: 100%;
+  padding: 15px;
+  border: none;
+  border-radius: 5px;
+  background-color: var(--card-color);
+  color: var(--text-color);
+}
+
+#todo-list {
+  list-style: none;
+  background-color: var(--card-color);
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+#todo-list li {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  padding: 15px;
+  border-bottom: 1px solid var(--border-color);
+  color: var(--text-color);
+}
+
+#todo-list li.completed span {
+  text-decoration: line-through;
+  color: var(--text-light);
+}
+
+#todo-list li input[type="checkbox"] {
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+}
+
+#todo-list li span {
+  flex: 1;
+}
+
+#todo-list li button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+  color: var(--text-light);
+}
+
+.footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  background-color: var(--card-color);
+  padding: 15px;
+  margin-top: 1px;
+  border-radius: 5px;
+  color: var(--text-light);
+  font-size: 14px;
+}
+
+.filters {
+  display: flex;
+  gap: 10px;
+}
+.filter-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: var(--text-light);
+  font-size: 14px;
+}
+.filter-btn.active {
+  color: hsl(220, 98%, 61%);
+  font-weight: bold;
+}
+
+#clear-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: var(--text-light);
+}
